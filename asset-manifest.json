@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/meddion/meddion.github.io/static/css/main.51b515db.chunk.css",
+    "main.js": "/meddion/meddion.github.io/static/js/main.184caf35.chunk.js",
+    "main.js.map": "/meddion/meddion.github.io/static/js/main.184caf35.chunk.js.map",
+    "runtime-main.js": "/meddion/meddion.github.io/static/js/runtime-main.02c3c311.js",
+    "runtime-main.js.map": "/meddion/meddion.github.io/static/js/runtime-main.02c3c311.js.map",
+    "static/css/2.d88a60dc.chunk.css": "/meddion/meddion.github.io/static/css/2.d88a60dc.chunk.css",
+    "static/js/2.af9c56a2.chunk.js": "/meddion/meddion.github.io/static/js/2.af9c56a2.chunk.js",
+    "static/js/2.af9c56a2.chunk.js.map": "/meddion/meddion.github.io/static/js/2.af9c56a2.chunk.js.map",
+    "index.html": "/meddion/meddion.github.io/index.html",
+    "precache-manifest.c4ebe664c7452b0a908028eb113a1206.js": "/meddion/meddion.github.io/precache-manifest.c4ebe664c7452b0a908028eb113a1206.js",
+    "service-worker.js": "/meddion/meddion.github.io/service-worker.js",
+    "static/css/2.d88a60dc.chunk.css.map": "/meddion/meddion.github.io/static/css/2.d88a60dc.chunk.css.map",
+    "static/css/main.51b515db.chunk.css.map": "/meddion/meddion.github.io/static/css/main.51b515db.chunk.css.map",
+    "static/js/2.af9c56a2.chunk.js.LICENSE": "/meddion/meddion.github.io/static/js/2.af9c56a2.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.02c3c311.js",
+    "static/css/2.d88a60dc.chunk.css",
+    "static/js/2.af9c56a2.chunk.js",
+    "static/css/main.51b515db.chunk.css",
+    "static/js/main.184caf35.chunk.js"
+  ]
+}
