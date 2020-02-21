@@ -8,9 +8,9 @@ import "./Post.css"
 
 dayjs.extend(relativeTime)
 
-const PostCard = props => (
-  <div id="post" className="card white-text grey darken-4">
-    <div className="card-content">{props.children}</div>
+const PostCard = ({ children }) => (
+  <div id="post" className="card white-text grey darken-4 ">
+    <div className="card-content">{children}</div>
   </div>
 )
 
@@ -59,7 +59,10 @@ const PostEditHeader = ({ postID }) => (
     >
       Edit
     </Link>
-    <Link className="red-text text-lighten-1" to={`/post/${postID}/delete`}>
+    <Link
+      className="red-text text-lighten-1"
+      to={`/post/${postID}/delete`}
+    >
       Remove
     </Link>
   </div>
@@ -67,7 +70,8 @@ const PostEditHeader = ({ postID }) => (
 
 const PostTime = ({ creationTime, lastEdited }) => {
   creationTime = dayjs.unix(creationTime).fromNow()
-  lastEdited = lastEdited !== 0 ? dayjs.unix(lastEdited).fromNow() : ""
+  lastEdited =
+    lastEdited !== 0 ? dayjs.unix(lastEdited).fromNow() : ""
   return (
     <div id="post-date" className="right-align grey-text">
       Posted {creationTime}
@@ -78,14 +82,14 @@ const PostTime = ({ creationTime, lastEdited }) => {
   )
 }
 
-const PostNav = props => (
+const PostNav = ({ history, children }) => (
   <div className="row">
     <div className="col s6 left-align">
-      <button className="btn transparent" onClick={props.history.goBack}>
+      <button className="btn grey darken-3" onClick={history.goBack}>
         <i className="material-icons left">arrow_back</i>Back
       </button>
     </div>
-    <div className="col s6 right-align">{props.children}</div>
+    <div className="col s6 right-align">{children}</div>
   </div>
 )
 

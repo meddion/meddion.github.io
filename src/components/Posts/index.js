@@ -1,13 +1,14 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-import { AppContext } from "../utils/helpers"
+import { AppContext } from "./../../utils/helpers"
 
-import { Post, PostTime, PostEditHeader } from "./Post"
+import { Post, PostTime, PostEditHeader } from "./../Post"
+import "./Posts.css"
 
 export default function Posts({ posts }) {
   return (
-    <div className="row">
+    <div id="posts" className="row">
       {posts.map((post, i) => {
         if (post.content.length > 400) {
           post.content = post.content.substring(0, 400) + " ..."
@@ -16,8 +17,8 @@ export default function Posts({ posts }) {
           post.title = "***"
         }
         return (
-          <div key={i} className="row">
-            <div className="col s8 offset-s2">
+          <div key={i} className="col s12">
+            <div className="row">
               <AppContext.Consumer>
                 {({ isAuthorized }) =>
                   isAuthorized && (
@@ -28,8 +29,12 @@ export default function Posts({ posts }) {
                 }
               </AppContext.Consumer>
               <div className="col s12">
-                <Link to={`/post/${post.id}`}>
-                  <Post title={post.title} content={post.content} />
+                <Link className="post-hover" to={`/post/${post.id}`}>
+                  <Post
+                    hover={true}
+                    title={post.title}
+                    content={post.content}
+                  />
                 </Link>
               </div>
               <div className="col s12">

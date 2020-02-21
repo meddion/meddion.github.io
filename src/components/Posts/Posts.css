@@ -1,0 +1,6 @@
+div#posts.row > div.col {
+  margin-bottom: 10px;
+}
+div#posts.row > div.col:last-child {
+  margin-bottom: 0;
+}

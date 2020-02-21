@@ -49,31 +49,27 @@ export default class FeedNav extends Component {
     const prev = this.props.currentPageNum - 1
     const next = this.props.currentPageNum + 1
     return (
-      <div className="row">
-        <div className="col s8 offset-s2 text-white">
-          <div className="row">
-            <div className="col s12 m8 left-align">
-              <Link
-                to={`/${prev}`}
-                className={`btn ${isPrevDisabled} blue navBtn`}
-              >
-                <i className="material-icons left">arrow_back</i>Prev
-              </Link>
-              <Link
-                to={`/${next}`}
-                className={`btn ${isNextDisabled} blue navBtn`}
-              >
-                <i className="material-icons right">arrow_forward</i>
-                Next
-              </Link>
-            </div>
-            <div
-              id="page-counter"
-              className="col s12 m4  right-align grey-text"
-            >
-              Page {this.props.currentPageNum}
-            </div>
-          </div>
+      <div className="row text-white">
+        <div id="buttons" className="col s12 m8 left-align">
+          <Link
+            to={`/${prev}`}
+            className={`btn-small ${isPrevDisabled} blue navBtn`}
+          >
+            <i className="material-icons left">arrow_back</i>Prev
+          </Link>
+          <Link
+            to={`/${next}`}
+            className={`btn-small ${isNextDisabled} blue navBtn`}
+          >
+            <i className="material-icons right">arrow_forward</i>
+            Next
+          </Link>
+        </div>
+        <div
+          id="page-counter"
+          className="col s12 m4 right-align grey-text"
+        >
+          Page {this.props.currentPageNum}
         </div>
       </div>
     )

@@ -51,7 +51,7 @@ class Login extends Component {
   render() {
     return (
       <form className="row" onSubmit={this.handleFormSubmit}>
-        <div className="col s6 push-s3 center-align white-text">
+        <div className="col s12 l6 offset-l3 center-align white-text">
           <h4>Login form</h4>
           <div className="row left-align">
             <div className="col s12">

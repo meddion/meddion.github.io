@@ -30,9 +30,9 @@ const Header = ({ location }) => {
       <nav className="nav-wrapper transparent">
         <div className="container">
           <Link to="/1" className="brand-logo">
-            <div className="flow-text">
+            <span className="flow-text">
               {process.env.REACT_APP_SITE_TITLE}
-            </div>
+            </span>
           </Link>
           <a
             href="#menu"

@@ -49,7 +49,7 @@ export default class App extends Component {
               exact
               path="/login"
               redirect="/"
-              component={Login}
+              component={insideContainer(Login)}
             />
             <ProtectedRoute
               exact
@@ -60,7 +60,10 @@ export default class App extends Component {
             <Route exact path="/about" component={About} />
             <PageRoute exact path="/post/:id" component={Post} />
             <PageRoute exact path="/:id?" component={Feed} />
-            <PageRoute path="*" component={Page404} />
+            <PageRoute
+              path="*"
+              component={insideContainer(Page404)}
+            />
           </Switch>
         </Router>
       </AppContext.Provider>
@@ -69,7 +72,7 @@ export default class App extends Component {
 }
 
 const PageRoute = ({ component, ...rest }) => {
-  const PageComponent = insideSection(insideContainer(component))
+  const PageComponent = insideSection(component)
   return (
     <Route {...rest} render={props => <PageComponent {...props} />} />
   )

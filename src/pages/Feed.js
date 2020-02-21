@@ -79,22 +79,26 @@ export default class Feed extends Component {
     }
 
     return (
-      <Fragment>
+      <div className="row">
         {this.context.isAuthorized && this.state.pageNum === 1 && (
-          <CreatePost appendPostHandler={this.appendPostHandler} />
+          <div className="col s12 m8 offset-m2 l6 offset-l3">
+            <CreatePost appendPostHandler={this.appendPostHandler} />
+          </div>
         )}
-        {this.state.isError ? (
-          <MinimalisticError content="My thoughts weren't loaded." />
-        ) : (
-          <Fragment>
-            <Posts
-              posts={this.state.posts[this.state.pageNum] || []}
-              history={this.props.history}
-            />
-            <FeedNav currentPageNum={this.state.pageNum} />
-          </Fragment>
-        )}
-      </Fragment>
+        <div className="col s12 m8 offset-m2 l6 offset-l3">
+          {this.state.isError ? (
+            <MinimalisticError content="My thoughts weren't loaded." />
+          ) : (
+            <Fragment>
+              <Posts
+                posts={this.state.posts[this.state.pageNum] || []}
+                history={this.props.history}
+              />
+              <FeedNav currentPageNum={this.state.pageNum} />
+            </Fragment>
+          )}
+        </div>
+      </div>
     )
   }
 }

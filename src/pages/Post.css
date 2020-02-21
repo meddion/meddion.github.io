@@ -1,3 +1,7 @@
+div#post-wrapper > div.col {
+  padding: 0 0.35rem !important;
+}
+
 #post {
   border-radius: 2px;
   padding: 1%;

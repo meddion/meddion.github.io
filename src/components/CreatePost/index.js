@@ -61,29 +61,30 @@ export default class CreatePost extends Component {
     }
     return (
       <div id="create-post" className="row">
-        <div className="col s8 offset-s2">
-          <div className="row">
-            {this.state.error && (
-              <div className="col s12">
-                <SimpleError error={this.state.error} />
-              </div>
-            )}
-            <form onSubmit={this.handleFormSubmit}>
-              <div className="col s12">
-                <PostEdit
-                  title={this.state.editTitle}
-                  content={this.state.editContent}
-                  inputChangeHandler={this.inputChangeHandler}
-                />
-              </div>
-              <div className="col s12">
-                <div id="create-post-footer" className="input-field right">
-                  <button className={`btn blue ${btnDisabled}`}>Post</button>
-                </div>
-              </div>
-            </form>
+        {this.state.error && (
+          <div className="col s12">
+            <SimpleError error={this.state.error} />
           </div>
-        </div>
+        )}
+        <form onSubmit={this.handleFormSubmit}>
+          <div className="col s12">
+            <PostEdit
+              title={this.state.editTitle}
+              content={this.state.editContent}
+              inputChangeHandler={this.inputChangeHandler}
+            />
+          </div>
+          <div className="col s12">
+            <div
+              id="create-post-footer"
+              className="input-field right"
+            >
+              <button className={`btn blue ${btnDisabled}`}>
+                Post
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     )
   }
