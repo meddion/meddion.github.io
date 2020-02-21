@@ -1,0 +1,20 @@
+#socials-list {
+  font-size: 20px !important;
+}
+
+.tabs .tab a:hover,
+.tabs .tab a.active {
+  background-color: transparent;
+}
+
+.tabs .tab a {
+  font-weight: bold;
+  font-size: 17px !important;
+  color: #fce4ec !important;
+}
+
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+  background-color: none !important;
+  outline: none;
+}

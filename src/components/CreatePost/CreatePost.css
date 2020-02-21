@@ -1,0 +1,12 @@
+#create-post {
+  margin-top: -135px;
+}
+
+form > div > #post {
+  border: 1px solid #ffffff !important;
+  padding: 1%;
+}
+
+#create-post-footer {
+  margin-top: 10px;
+}

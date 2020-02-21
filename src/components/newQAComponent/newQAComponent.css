@@ -1,0 +1,14 @@
+div#qa-component {
+  min-height: 500px;
+}
+
+div#title {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .btnDiv {
+    margin-bottom: 10px;
+    text-align-last: center !important;
+  }
+}
