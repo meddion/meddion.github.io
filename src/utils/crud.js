@@ -1,5 +1,8 @@
 import axios from "axios"
 
+// We enable to send cookies with a request
+axios.defaults.withCredentials = true
+
 const API_URL = process.env.REACT_APP_API_URL
 
 const isUserAuthorized = async () => {

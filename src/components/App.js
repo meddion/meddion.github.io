@@ -20,17 +20,32 @@ import Login from "./../pages/Login"
 import Logout from "./../pages/Logout"
 import Page404 from "./../pages/Page404"
 
+const PostAdvanced = insideSection(Post)
+const FeedAdvanced = insideSection(Feed)
+const LogoutAdvanced = insideSection(Logout)
+const DeletePostAdvanced = insideSection(DeletePost)
+const LoginAdvanced = insideSection(insideContainer(Login))
+const Page404Advanced = insideSection(insideContainer(Page404))
+
 export default class App extends Component {
+  static sub = null
   state = {
     isAuthorized: false,
+    sub: null,
   }
 
   componentDidMount() {
-    auth.stateChange.subscribe(isAuthorized =>
+    this.sub = auth.stateChange.subscribe(isAuthorized =>
       this.setState({ isAuthorized }),
     )
+
     M.Sidenav.init(document.querySelectorAll(".sidenav"))
   }
+
+  componentWillUnmount() {
+    this.sub.unsubscribe()
+  }
+
   render() {
     return (
       <AppContext.Provider
@@ -39,45 +54,34 @@ export default class App extends Component {
         <Router>
           <Header />
           <Switch>
-            <ProtectedRoute
-              exact
-              path="/logout"
-              redirect="/login"
-              component={Logout}
-            />
             <NeedToBeUnauthorizedToSeeRoute
               exact
               path="/login"
               redirect="/"
-              component={insideContainer(Login)}
+              component={LoginAdvanced}
+            />
+            <ProtectedRoute
+              exact
+              path="/logout"
+              redirect="/login"
+              component={LogoutAdvanced}
             />
             <ProtectedRoute
               exact
               path="/post/:id/delete"
               redirect="/login"
-              component={DeletePost}
+              component={DeletePostAdvanced}
             />
             <Route exact path="/about" component={About} />
-            <PageRoute exact path="/post/:id" component={Post} />
-            <PageRoute exact path="/:id?" component={Feed} />
-            <PageRoute
-              path="*"
-              component={insideContainer(Page404)}
-            />
+            <Route exact path="/post/:id" component={PostAdvanced} />
+            <Route exact path="/:id?" component={FeedAdvanced} />
+            <Route path="*" component={Page404Advanced} />
           </Switch>
         </Router>
       </AppContext.Provider>
     )
   }
 }
-
-const PageRoute = ({ component, ...rest }) => {
-  const PageComponent = insideSection(component)
-  return (
-    <Route {...rest} render={props => <PageComponent {...props} />} />
-  )
-}
-
 const ProtectedRoute = ({ redirect, ...rest }) => {
   return (
     <AppContext.Consumer>
@@ -85,7 +89,7 @@ const ProtectedRoute = ({ redirect, ...rest }) => {
         !isAuthorized ? (
           <Redirect to={redirect} />
         ) : (
-          <PageRoute {...rest} />
+          <Route {...rest} />
         )
       }
     </AppContext.Consumer>

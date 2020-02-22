@@ -16,6 +16,7 @@ export default class EmailForm extends Component {
 
   handleHTMLFormSubmit = async e => {
     e.preventDefault()
+    // TO DO: MAKE EMAIL FORM WORK!
   }
 
   render() {

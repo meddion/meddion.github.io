@@ -17,7 +17,7 @@ const PostCard = ({ children }) => (
 const Post = ({ title, content }) => {
   return (
     <PostCard>
-      <span className="card-title center-align truncate">
+      <span className="card-title center-align">
         <h5>{title}</h5>
       </span>
       <p>{content}</p>
