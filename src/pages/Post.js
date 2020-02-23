@@ -84,12 +84,13 @@ export default class Post extends Component {
   }
 
   async componentDidMount() {
-    const resp = await fetchPost(this.state.postId)
-    if (resp.error !== "") {
-      console.error(resp.error)
-      this.setState({ isFetchingPostError: true })
-    } else {
-      const { title, content, creation_time, last_edited } = resp.body
+    if (this.props.location.data) {
+      const {
+        title,
+        content,
+        creation_time,
+        last_edited,
+      } = this.props.location.data
       this.setState({
         title,
         content,
@@ -98,6 +99,27 @@ export default class Post extends Component {
         creationTime: creation_time,
         lastEdited: last_edited,
       })
+    } else {
+      const resp = await fetchPost(this.state.postId)
+      if (resp.error !== "") {
+        console.error(resp.error)
+        this.setState({ isFetchingPostError: true })
+      } else {
+        const {
+          title,
+          content,
+          creation_time,
+          last_edited,
+        } = resp.body
+        this.setState({
+          title,
+          content,
+          editTitle: title,
+          editContent: content,
+          creationTime: creation_time,
+          lastEdited: last_edited,
+        })
+      }
     }
     this.setState({ isLoading: false })
   }
@@ -147,7 +169,15 @@ export default class Post extends Component {
                   <Fragment>
                     <Link
                       className="btn nav-btn red darken-3"
-                      to={`${this.props.match.url}/delete`}
+                      to={{
+                        pathname: `${this.props.match.url}/delete`,
+                        data: {
+                          title: this.state.title,
+                          content: this.state.content,
+                          creation_time: this.state.creationTime,
+                          last_edited: this.state.lastEdited,
+                        },
+                      }}
                     >
                       Delete
                     </Link>

@@ -51,17 +51,25 @@ const PostEdit = ({ title, content, inputChangeHandler }) => {
   )
 }
 
-const PostEditHeader = ({ postID }) => (
+const PostEditHeader = ({ post }) => (
   <div id="post-edit-header" className="right-align">
     <Link
-      className="yellow-text text-darken-4"
-      to={`/post/${postID}?edit=true`}
+      className="grey-text text-darken-2"
+      to={`/post/${post.id}?edit=true`}
     >
       Edit
     </Link>
     <Link
-      className="red-text text-lighten-1"
-      to={`/post/${postID}/delete`}
+      className="grey-text text-darken-1"
+      to={{
+        pathname: `/post/${post.id}/delete`,
+        data: {
+          title: post.title,
+          content: post.content,
+          creation_time: post.creation_time,
+          last_edited: post.last_edited,
+        },
+      }}
     >
       Remove
     </Link>

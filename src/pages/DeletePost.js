@@ -9,6 +9,11 @@ export default newQAComponent(
     if (error !== "") {
       throw new Error(error)
     }
-    props.history.goBack()
+    props.history.push("/1")
   },
+  props =>
+    props.history.push({
+      pathname: `/post/${props.match.params.id}`,
+      data: props.location.data,
+    }),
 )

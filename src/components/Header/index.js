@@ -3,6 +3,7 @@ import { withRouter, Link } from "react-router-dom"
 
 import { AppContext } from "../../utils/helpers"
 
+import SocialList from "./../SocialList"
 import "./Header.css"
 
 const picNames = ["night", "lands", "blooming"]
@@ -47,8 +48,23 @@ const Header = ({ location }) => {
         </div>
       </nav>
 
-      <ul className="sidenav" id="mobile-links">
-        <Links />
+      <ul id="mobile-links" className="sidenav grey darken-4">
+        <ul className="grey darken-3">
+          <li>
+            <a className="subheader grey-text text-darken-1">Menu</a>
+          </li>
+          <Links />
+          <li>
+            <div className="divider grey"></div>
+          </li>
+        </ul>
+
+        <li>
+          <a className="subheader grey-text text-darken-1">
+            Me on socials
+          </a>
+        </li>
+        <SocialList />
       </ul>
     </header>
   )
@@ -57,13 +73,13 @@ const Header = ({ location }) => {
 const Links = () => (
   <Fragment>
     <li>
-      <Link to="/1" className="sidenav-close">
+      <Link to="/1" className="sidenav-close waves-effect">
         <span>Feed</span>
       </Link>
     </li>
 
     <li>
-      <Link to="/about" className="sidenav-close">
+      <Link to="/about" className="sidenav-close waves-effect">
         About me
       </Link>
     </li>
@@ -71,11 +87,11 @@ const Links = () => (
       <AppContext.Consumer>
         {({ isAuthorized }) =>
           isAuthorized ? (
-            <Link to="/logout" className="sidenav-close">
+            <Link to="/logout" className="sidenav-close waves-effect">
               Logout
             </Link>
           ) : (
-            <Link to="/login" className="sidenav-close">
+            <Link to="/login" className="sidenav-close waves-effect">
               Login
             </Link>
           )

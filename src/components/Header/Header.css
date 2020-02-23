@@ -5,3 +5,11 @@ header {
   -o-background-size: cover;
   background-size: cover;
 }
+
+.sidenav li > a {
+  color: #ffffff !important;
+}
+
+a.subheader {
+  font-style: italic;
+}

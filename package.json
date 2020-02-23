@@ -20,7 +20,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build && cp public/404.html build",
     "deploy": "gh-pages --dist build --branch master",
-    "build-deploy": "npm run build && npm run deploy",
+    "build-deploy": "npm run build && npm run deploy && git add . && git commit -m \"updated\" && git push origin master",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

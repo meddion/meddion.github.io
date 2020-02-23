@@ -2,6 +2,7 @@ import React, { Fragment, Component } from "react"
 /* import EmailForm from "../components/EmailForm"*/
 import M from "materialize-css"
 import "./About.css"
+import SocialList from "./../components/SocialList"
 
 export default class About extends Component {
   componentDidMount() {
@@ -97,20 +98,10 @@ export default class About extends Component {
                   </h4>
                 </div>
                 <div className="col s12">
-                  <ul id="socials-list">
-                    <li>
-                      <a href="https://github.com/meddion">Github</a>
-                    </li>
-                    <li>
-                      <a href="https://t.me/Medionn">Telegram</a>
-                    </li>
-                    <li>
-                      <a href="https://instagram.com/meddionn">
-                        Instagram
-                      </a>
-                    </li>
-                    <li>volodia23byk@gmail.com</li>
-                  </ul>
+                  <SocialList />
+                  <h5 className="flow-text">
+                    volodia23byk@gmail.com
+                  </h5>
                 </div>
               </div>
             </div>

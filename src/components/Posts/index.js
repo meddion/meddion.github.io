@@ -10,11 +10,13 @@ export default function Posts({ posts }) {
   return (
     <div id="posts" className="row">
       {posts.map((post, i) => {
-        if (post.content.length > 400) {
-          post.content = post.content.substring(0, 400) + " ..."
+        let content = post.content
+        if (content.length > 400) {
+          content = content.substring(0, 400) + " ..."
         }
-        if (post.title.length === 0) {
-          post.title = "***"
+        let title = post.title
+        if (title.length === 0) {
+          title = "***"
         }
         return (
           <div key={i} className="col s12">
@@ -23,13 +25,24 @@ export default function Posts({ posts }) {
                 {({ isAuthorized }) =>
                   isAuthorized && (
                     <div className="col s12">
-                      <PostEditHeader postID={post.id} />
+                      <PostEditHeader post={post} />
                     </div>
                   )
                 }
               </AppContext.Consumer>
               <div className="col s12">
-                <Link className="post-hover" to={`/post/${post.id}`}>
+                <Link
+                  className="post-hover"
+                  to={{
+                    pathname: `/post/${post.id}`,
+                    data: {
+                      title: post.title,
+                      content: post.content,
+                      creation_time: post.creation_time,
+                      last_edited: post.last_edited,
+                    },
+                  }}
+                >
                   <Post
                     hover={true}
                     title={post.title}
