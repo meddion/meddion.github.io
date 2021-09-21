@@ -13,14 +13,6 @@ export default () => {
           Telegram
         </a>
       </li>
-      <li>
-        <a
-          className="waves-effect"
-          href="https://instagram.com/meddionn"
-        >
-          Instagram
-        </a>
-      </li>
     </ul>
   )
 }
