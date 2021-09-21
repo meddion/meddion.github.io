@@ -22,16 +22,28 @@ export default class About extends Component {
               <div className="col s12 l6">
                 <h2>Who am I?</h2>
                 <p>
-                  Volodia iz susidskoho dvora, obviously. This is my
-                  ala portfolio landing page, but I didn't have time
-                  to fill it with all the information required. I may
-                  do it latter.
+                My name is Volodymyr, at the time of writing this, I am 20 y.o. finishing my B.A. in Computer Science.
+
+                A passionate, apt, and highly motivated student
+                who yet finds so much beauty in this world - this is how I would describe myself in a few words.
+
+                Hope I haven't lost you with that cheesy line at the end, 
+                then in case of collaboration connect with me through the links below.                
                 </p>
               </div>
               <div className="col s12 l6 ">
                 <ul className="tabs grey darken-3 ">
                   <li className="tab col s6">
                     <a href="#programming">Programming</a>
+                    <p>
+                      During my studies, I've tried and learned many popular languages and technologies: 
+                      by doing projects that involve low-level and system programming (C, Rust, Assembly), 
+                      ones that are handy for Data Analysis (Python, Julia), and the ones that dominate the web (JavaScript, Go). 
+                      Some of the projects were done for the uni, others remain hidden on my hard drive, and a few get to meet GitHub repos.
+                      My motto "If it's hard going, it's worth doing".
+                      Even though a lot of my study hours are spent on computer science-related books and materials, I love exploring new areas of expertise, 
+                      including: mathematics, philosophy, music, physics, etc. Often, if a field rests on a mathematical basis - I am intrigued.
+                    </p>
                   </li>
                   <li className="tab col s6">
                     <a href="#hobbies">Hobbies</a>
@@ -44,10 +56,10 @@ export default class About extends Component {
                 <div id="hobbies" className="col s12">
                   <p className="flow-text">Hobbies</p>
                   <p>
-                    Too lazy to fill this section about me right now,
-                    but I'll go back to it later. Anyway, why are you
-                    reading this? I mean, don't you have more
-                    important things to do with your time?
+                  I am passionate about learning new things, reading, and getting my hands dirty by coding.
+                  I've picked up a piano last summer, maybe one day I will convert myself into a full-time musician and sell a million copies 
+                  with just songs about the hardship of being a programmer (trust me, there are plenty).
+                  I also got into running more than a year ago, a great meditation practice I can handle.
                   </p>
                 </div>
               </div>
