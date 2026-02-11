@@ -2,7 +2,6 @@ import React, {Fragment, Component} from "react"
 /* import EmailForm from "../components/EmailForm"*/
 import M from "materialize-css"
 import "./About.css"
-import SocialList from "./../components/SocialList"
 
 export default class About extends Component {
   componentDidMount() {

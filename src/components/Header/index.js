@@ -51,7 +51,7 @@ const Header = ({ location }) => {
       <ul id="mobile-links" className="sidenav grey darken-4">
         <ul className="grey darken-3">
           <li>
-            <a className="subheader grey-text text-darken-1">Menu</a>
+            <span className="subheader grey-text text-darken-1">Menu</span>
           </li>
           <Links />
           <li>
@@ -60,9 +60,9 @@ const Header = ({ location }) => {
         </ul>
 
         <li>
-          <a className="subheader grey-text text-darken-1">
+          <span className="subheader grey-text text-darken-1">
             Me on socials
-          </a>
+          </span>
         </li>
         <SocialList />
       </ul>
