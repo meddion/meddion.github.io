@@ -22,12 +22,7 @@ export default class About extends Component {
               <div className="col s12 l6">
                 <h2>Who am I?</h2>
                 <p>
-                  My name is Volodymyr, at the time of writing this, I am 20 y.o. finishing my B.A. in Computer Science.
-                  A passionate, apt, and highly motivated student
-                  who yet finds so much beauty in this world - this is how I would describe myself in a few words.
-                  <br /><br />
-                  Hope I haven't lost you with that cheesy line at the end,
-                  then in case of collaboration connect with me through the links below.
+                  Uncaught ReferenceError: 'Volodymyr' is not defined           
                 </p>
               </div>
               <div className="col s12 l6 ">
@@ -41,23 +36,13 @@ export default class About extends Component {
                 </ul>
                 <div id="programming" className="col s12">
                   <p>
-                    During my studies, I've tried and learned many popular languages and technologies:
-                    by doing projects that involve low-level and system programming (C, Rust, Assembly),
-                    ones that are handy for Data Analysis (Python, Julia), and the ones that dominate the web (JavaScript, Go).
-                    <br />Some of the projects were done for the uni, others remain hidden on my hard drive, and a few get to meet GitHub repos.
-                    <br /><br />My motto "If it's hard going, it's worth doing".<br />
-                    Even though a lot of my study hours are spent on computer science-related books and materials, I love exploring new areas of expertise,
-                    including: mathematics, philosophy, music, physics, etc. Often, if a field rests on a mathematical basis - I am intrigued.
+                    Not language evangelist. I use the right tool for the job. However, Go is my go to :)         
                     </p>
                 </div>
                 <div id="hobbies" className="col s12">
                   <p>
-                    I am passionate about learning new things, reading, and getting my hands dirty by coding.
-                    <br />
-                    I've picked up a piano last summer, maybe one day I will convert myself into a full-time musician and sell a million copies
-                    with just songs about the hardship of being a programmer (trust me, there are plenty).
-                    <br />
-                    I also got into running more than a year ago, a great meditation practice I can handle.
+                    I'm a passionate learner. I like to push my body physically. 
+                    I do crossfit, run, cycle, hike and angle.
                   </p>
                 </div>
               </div>
