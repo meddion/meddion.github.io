@@ -68,37 +68,6 @@ export default class About extends Component {
               <h2 className="white-text center-align">
                 Get In Touch
               </h2>
-              {/*  <div className="col s12 l5 white-text">
-                <div className="row">
-                  <div className="col s12">
-                    <h4>
-                      Write me an email
-                      <span role="img" aria-label=":)">
-                        &#128522;
-                      </span>
-                    </h4>
-                  </div>
-                  <div className="col s12">
-                    <EmailForm />
-                  </div>
-                </div>
-              </div> */}
-              <div className="col s12 l5 offset-l2 white-text">
-                <div className="col s12">
-                  <h4>
-                    Or reach me on socials
-                    <span role="img" aria-label=";)">
-                      &#128521;
-                    </span>
-                  </h4>
-                </div>
-                <div className="col s12">
-                  <SocialList />
-                  <h5 className="flow-text">
-                    volodia23byk@gmail.com
-                  </h5>
-                </div>
-              </div>
             </div>
           </div>
         </section>
